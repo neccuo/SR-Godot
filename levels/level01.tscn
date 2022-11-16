@@ -1,0 +1,35 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://actors/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://objects/tilemap_scene.tres" type="TileSet" id=2]
+[ext_resource path="res://assets/planets/hole.png" type="Texture" id=3]
+[ext_resource path="res://assets/space2.png" type="Texture" id=4]
+[ext_resource path="res://assets/planets/1832687938.png" type="Texture" id=5]
+[ext_resource path="res://utilities/Mob_Spawner.tscn" type="PackedScene" id=6]
+
+[node name="Level01" type="Node2D"]
+
+[node name="spc" type="Sprite" parent="."]
+scale = Vector2( 25, 25 )
+texture = ExtResource( 4 )
+
+[node name="1832687938" type="Sprite" parent="."]
+position = Vector2( -244, 329 )
+texture = ExtResource( 5 )
+
+[node name="Mob_Spawner" parent="." instance=ExtResource( 6 )]
+position = Vector2( -313, -320 )
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+collision_layer = 4
+format = 1
+tile_data = PoolIntArray( -196615, 0, 0, -262140, 0, 0, -262137, 0, 0, -196608, 0, 0, -196607, 0, 0, -131072, 0, 0, -7, 0, 0, -65536, 0, 0, -65535, 0, 0 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( -151, 89 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="294383421" type="Sprite" parent="."]
+position = Vector2( -821, 228 )
+texture = ExtResource( 3 )
